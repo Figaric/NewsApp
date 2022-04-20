@@ -1,0 +1,31 @@
+{
+  "name": "news-app",
+  "version": "1.0.0",
+  "description": "Web app where you can scroll through the news",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "author": "Jigen/Figaric",
+  "license": "MIT",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "axios": "^0.26.1",
+    "framer-motion": "^6.2.8",
+    "next": "^12.1.4",
+    "react": "^18.0.0",
+    "react-datepicker": "^4.7.0",
+    "react-dom": "^18.0.0",
+    "react-redux": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/react": "^17.0.43",
+    "@types/react-datepicker": "^4.3.4",
+    "@types/react-redux": "^7.1.24",
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.23",
+    "typescript": "^4.6.3"
+  }
+}
