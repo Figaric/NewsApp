@@ -2,16 +2,12 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { useDispatch } from "react-redux";
 
 function NewsList() {
-    // const [newsItems, setNewsItems] = useState([]);
-
-    // useEffect(() => {
-    //     axios.get("https://newsapi.org/v2/everything?q=charged&page=1&pageSize=15&apiKey=d3786a3a626f4cf8a5edb668f8ab757d")
-    //         .then(res => {
-    //             console.log();
-    //         });
-    // });
+    const newsItems = useSelector((state: RootState) => state.newsItems.items);
 
     return (
         <motion.div
@@ -32,10 +28,12 @@ function NewsList() {
                 grid-cols-1
                 2xl:grid-cols-2
         ">
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
+            {newsItems.map(i => (
+                <NewsItem
+                    author={i.author}
+                    title={i.title}
+                    imageUri={i.urlToImage} />
+            ))}
         </motion.div>
     );
 }
