@@ -5,8 +5,6 @@ import Calendar from "./Calendar";
 import SearchButton from "./SearchButton";
 
 function SearchBar() {
-    const requestInfo = useSelector(state => state.requestInfo.value);
-
     return (
         <div className="
             flex
@@ -28,7 +26,6 @@ function SearchBar() {
                 duration-300
             ">
                 <input 
-                    onBlur={}
                     className="
                         w-full
                         focus:outline-none
