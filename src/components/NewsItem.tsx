@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import getRandomGradient from "../utils/getRandomGradient";
 
 interface NewsItemProps {
     imageUri: string,
@@ -8,12 +7,11 @@ interface NewsItemProps {
     author: string
 };
 
-const NewsItem: React.FC = () => {
-    const [gradient, setGradient] = useState(String);
-
-    useEffect(() => {
-        setGradient(getRandomGradient());
-    }, []);
+const NewsItem: React.FC<NewsItemProps> = ({
+    imageUri,
+    title,
+    author
+}) => {
 
     return (
         <motion.div
@@ -34,7 +32,7 @@ const NewsItem: React.FC = () => {
                     h-full
                     w-full
                     object-cover
-                " src="https://media.istockphoto.com/photos/snowcapped-k2-peak-picture-id1288385045?k=20&m=1288385045&s=612x612&w=0&h=kcZXuKvLsEbbGakLlcZpolhBT7PyC9AQWiv2kZ7aHfQ=" />
+                " src={imageUri} />
             </div>
             <div className="
                 border
@@ -49,12 +47,12 @@ const NewsItem: React.FC = () => {
                     text-sm
                     text-zinc-600
                 ">
-                    by Tikhon
+                    by {author}
                 </p>
                 <p className="
                     font-semibold
                 ">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores accusantium est officia? Illo voluptatum ipsam provident consequuntur recusandae obcaecati rem.
+                    {title}
                 </p>
             </div>
         </motion.div>
