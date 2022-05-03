@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 import { forwardRef, useState } from "react";
 import DatePicker from "react-datepicker";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { setDate } from "../redux/requestInfoSlice";
 
 function Calendar() {
-    const [date, setDate] = useState(new Date());
+    const requestInfo = useSelector((state: RootState) => state.requestInfo);
+    const dispatch = useDispatch();
 
     const InputField = forwardRef(({ value, onClick }: any, ref: any) => (
         <button 
@@ -30,8 +35,8 @@ function Calendar() {
     return (
         <DatePicker
             dateFormat={"dd MMM yyyy"}
-            onChange={(newDate) => setDate(newDate)}
-            selected={date}
+            onChange={(newDate) => dispatch(setDate(newDate.toDateString()))}
+            selected={new Date(requestInfo.date)}
             customInput={<InputField />}
             withPortal
         />
