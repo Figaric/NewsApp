@@ -8,11 +8,6 @@ function Index() {
             space-x-3
         ">
             <div className="
-                bg-zinc-800
-                shadow-2xl
-                p-5
-                border-b
-                border-zinc-700
                 relative
             ">
                 <img className="
@@ -21,13 +16,31 @@ function Index() {
                     h-full
                     w-full
                     object-cover
-                    -z-10
                     opacity-50
                     border
                     border-zinc-600
+                    -top-4
+                    -right-8
+                    hover:-top-8
+                    hover:-right-[80%]
+                    hover:opacity-100
+                    transition-all
+                    duration-300
+                    
                 " src={"https://www.stereophile.com/images/061222-Aavik-600.jpg"} />
                 <div className="
+                    relative
                     space-y-3
+                    group
+                    bg-zinc-800
+                    shadow-2xl
+                    p-5
+                    border-b
+                    z-10
+                    transition-transform
+                    duration-300
+                    hover:scale-105
+                    border-zinc-700
                 ">
                     <p className="
                         font-serif
