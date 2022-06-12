@@ -1,21 +1,28 @@
 import Head from "next/head";
 
-const Layout: React.FC = ({ children }) => {
+interface LayoutProps {
+    children: React.ReactNode
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
-        <main>
+        <div>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <title>NewsApp - Homepage</title>
             </Head>
 
-            <div className="
-                flex
-                justify-center
-                pt-5
-            ">
+            <main
+                className="
+                    min-h-screen
+                    flex
+                    justify-center
+                    items-center
+                    
+                ">
                 {children}
-            </div>
-        </main>
+            </main>
+        </div>
     );
 }
 
