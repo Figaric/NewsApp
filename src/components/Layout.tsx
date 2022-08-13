@@ -11,7 +11,11 @@ function Layout({ children }) {
                 <title>News app</title>
             </NextHead>
 
-            <main>
+            <main className="
+                flex
+                justify-center
+                h-screen
+            ">
                 {children}
             </main>
         </div>

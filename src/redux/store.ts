@@ -1,14 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import newsItemsSlice from "./newsItemsSlice";
-import requestInfoSlice from "./requestInfoSlice";
+import newsItemsSlice from "./newsItemSlice";
 
-const reduxStore = configureStore({
+const store = configureStore({
     reducer: {
-        newsItems: newsItemsSlice,
-        requestInfo: requestInfoSlice
+        newsItems: newsItemsSlice.reducer,
     }
 });
 
-export type RootState = ReturnType<typeof reduxStore.getState>;
+export type RootState = ReturnType<typeof store.getState>;
 
-export default reduxStore;
+export default store;
