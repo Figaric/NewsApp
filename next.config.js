@@ -3,10 +3,8 @@
  */
 const nextConfig = {
     reactStrictMode: true,
-    images: {
-        domains: [
-            "static01.nyt.com"
-        ]
+    env: {
+        apiKey: "d3786a3a626f4cf8a5edb668f8ab757d"
     }
 };
 
